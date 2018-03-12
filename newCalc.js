@@ -38,7 +38,6 @@ var quarter = 3;//prompt("What quarter are you in");
 var currentQ = document.getElementById("term-"+quarter+"Q");
 var currentGradeStr = currentQ.children[1].innerHTML;
 var currentGrade = parseFloat(currentGradeStr.substring(13, currentGradeStr.length-2));
-console.log(currentGrade);
 
 var gradeEls = currentQ.children[2].children[2].children[1].children;
 var grades = [];
@@ -52,5 +51,13 @@ for (var i = 0; i < grades.length; i++) {
 	totGot+=grades[i].getGotten();
 	totOut+=grades[i].getOutOf();
 }
-
-console.log(totGot/totOut);
+var fullGrade = totGot/totOut;
+var roundGrade = (fullGrade*100);
+console.log(currentGrade);
+console.log((""+currentGrade).length);
+switch((""+currentGrade).length){
+	case 2: roundGrade = Math.round(roundGrade);
+	case 4: roundGrade = Math.round(roundGrade*10)/10;
+	case 5: roundGrade = Math.round(roundGrade*100)/100;
+}
+console.log(roundGrade);
