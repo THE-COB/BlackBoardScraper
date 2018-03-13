@@ -34,6 +34,6 @@ function weightedFunction(){
 
 function unweightedFunction(){
 	chrome.tabs.executeScript(null, {
-		file: "unweighted.js"
+		file: "newCalc.js"
 	});
 }

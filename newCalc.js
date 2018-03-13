@@ -1,6 +1,15 @@
+var weighted = false;
+var quarter = 3;
+
 var Grade = class{
-	constructor(gradeEl){
-		var strScore = gradeEl.children[2].innerHTML;
+	constructor(gradeEl, isEl){
+		var strScore;
+		if(isEl){
+			strScore = gradeEl.children[2].innerHTML;
+		}
+		else{
+			strScore = gradeEl;
+		}
 		var splitScore = strScore.split("/");
 		var gotten;
 		var outOf;
@@ -17,7 +26,13 @@ var Grade = class{
 			outOf = parseInt(strScore.split("/")[1]);
 		}
 		this.score = [gotten, outOf];
-		this.type = gradeEl.children[1].innerHTML;
+		this.type = "";
+		if(isEl){
+			this.type = gradeEl.children[1].innerHTML;
+		}
+		else if(weighted){
+			this.type = prompt("What type of assignment");
+		}
 	}
 
 	getScore(){
@@ -34,7 +49,6 @@ var Grade = class{
 	}
 }
 
-var quarter = 3;//prompt("What quarter are you in");
 var currentQ = document.getElementById("term-"+quarter+"Q");
 var currentGradeStr = currentQ.children[1].innerHTML;
 var currentGrade = parseFloat(currentGradeStr.substring(13, currentGradeStr.length-2));
@@ -42,7 +56,22 @@ var currentGrade = parseFloat(currentGradeStr.substring(13, currentGradeStr.leng
 var gradeEls = currentQ.children[2].children[2].children[1].children;
 var grades = [];
 for(var i = 0; i<gradeEls.length; i++){
-	grades.push(new Grade(gradeEls[i]));
+	grades.push(new Grade(gradeEls[i], true));
+}
+
+var isDone = false;
+while(!isDone){
+	var moreGrades = prompt("Do you want to add a grade?(y/n)");
+	if(!(moreGrades == "y" || moreGrades == "Y" || moreGrades == "yes" || moreGrades == "Yes")){
+		isDone = true;
+		break;
+	}
+	else{
+		var newGrade = prompt("What grade do you want to add (xx/xx)");
+		alert(newGrade);
+		grades.push(new Grade(newGrade, false));
+
+	}
 }
 
 var totGot = 0;
@@ -61,3 +90,4 @@ switch((""+currentGrade).length){
 	case 5: roundGrade = Math.round(roundGrade*100)/100;
 }
 console.log(roundGrade);
+alert(roundGrade);
