@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html style=''>
 <head>
-<script src='content.js'></script>
-
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=400px, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src='content.js'></script>
 </head>
 <body style="width:400px;">
-<h1>Make sure your grade window is open</h1>
+	<h4><strong>Make sure your grade window is open</strong></h4>
 
-<table style="width:100%">
-
-<tr>
-<th><button id="weightedButton">Weighted Grade</button></th>
-<th><button id="unweightedButton">Unweighted Grade</button></th>
-
-</tr>
-
-<tr>
-<td><input id="weightedDate" value="Date for weighted grades"/></td>
-<td><input id="unweightedDate" value="Date for unweighted grades"/></td>
-</tr>
-
-</table>
-
+	<div class="row">
+		<div class="col-sm-2">
+			<p>Quarter: <input id="quarter" value="3"/></p>
+		</div>
+		<div class="col-sm-6">
+			<div>
+				<button id="weightedButton">Weighted Grade</button>
+				<button id="unweightedButton">Unweighted Grade</button>
+			</div>
+			<a href="https://goo.gl/forms/1fpCghIIhv49VfTr1">Questions, comments, concerns?</a>
+		</div>
+	</div>
 </body>
 </html>
