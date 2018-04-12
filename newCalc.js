@@ -74,8 +74,8 @@ for(var i = 0; i<grades.length; i++){
 
 var isDone = false;
 while(!isDone){
-	var moreGrades = prompt("Do you want to add a grade?(y/n)");
-	if(!(moreGrades == "y" || moreGrades == "Y" || moreGrades == "yes" || moreGrades == "Yes")){
+	var moreGrades = window.confirm("Do you want to add a grade?");
+	if(!moreGrades){
 		isDone = true;
 		break;
 	}
