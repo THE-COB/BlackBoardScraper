@@ -14,7 +14,6 @@ function weightedFunction(){
 }
 function unweightedFunction(){
 	var quarter = document.getElementById("quarter").value;
-	alert(quarter);
 
 	chrome.tabs.executeScript(null, {
 		code: "var quarter = "+quarter+"; var weighted = false;"

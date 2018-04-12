@@ -1,5 +1,3 @@
-/*var weighted = false;
-var quarter = 3;*/
 var Grade = class{
 	constructor(gradeEl, isEl){
 		var strScore;
