@@ -94,14 +94,7 @@ if(!weighted){
 		totOut+=grades[i].getOutOf();
 	}
 	var fullGrade = totGot/totOut;
-	var roundGrade = (fullGrade*100);
-	switch((""+currentGrade).length){
-		case 2: roundGrade = Math.round(roundGrade);
-		case 4: roundGrade = Math.round(roundGrade*10)/10;
-		case 5: roundGrade = Math.round(roundGrade*100)/100;
-	}
-	console.log(roundGrade);
-	alert(roundGrade);
+	alert(fullGrade);
 }
 else{
 	var typeVal = [];
