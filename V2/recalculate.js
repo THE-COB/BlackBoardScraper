@@ -105,7 +105,7 @@ else{
 			gradeLetter = "A";
 		}
 		var gradeFormed = Math.round(totalGrade*10000)/100;
-		var gradeDisp = document.querySelector("#term-2Q > h3");
+		var gradeDisp = document.querySelector("#term-"+quarter+"Q > h3");
 		gradeDisp.innerHTML = quarter+"Q Grade: "+gradeLetter+" ["+gradeFormed+"%]";
 	}
 	else{
